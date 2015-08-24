@@ -1,0 +1,25 @@
+.well{
+  margin-left: 10em;
+  margin-right: 10em;
+  height: 250px;
+  padding-bottom: 50px;
+  
+}
+
+form{
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+
+.pull-right{
+  width: 80%;
+}
+
+.panel-body{
+  height: 15%;
+}
+
+.navbar{
+  background-color: rgba(6, 6, 6, 0.13);
+}
