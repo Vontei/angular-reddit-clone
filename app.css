@@ -6,6 +6,14 @@
 
 }
 
+.valid{
+  border-color: rgb(106, 251, 63);
+}
+
+.invalid{
+  border-color: rgb(242, 72, 10);
+}
+
 form{
   margin-left: 10em;
   margin-right: 10em;

@@ -1,0 +1,35 @@
+var app = angular.module("redditClone");
+app.factory('postService', function(){
+
+  return {
+    posts: [
+        {
+          title:"Ice mtn Slid",
+          author:'Salter',
+          image: "http://images.summitpost.org/original/110894.jpg",
+          description: 'The northwest cornice slid saturday morning. It was triggered by a skiier dropping in around 845am. Skies were clear and wind was low. The slab was 2.5 ft thick and 200ft wide.',
+          createdAt: new Date().getTime(),
+          likes: 0
+        },
+        {
+          title:"Red Lady",
+          author:'Nick',
+          image: "https://cbshotoftheday.files.wordpress.com/2014/03/14-03-24_emmonsski.jpg?w=1000",
+          description: 'The south facing side has a weak facet layer two feet down. Best options are early morning descents with a thorough pit analysis and slab stomp.',
+          createdAt: new Date().getTime(),
+          likes: 0
+        }
+    ],
+    addPost: function (title,author,image,desc) {
+      var post = {
+        title: title,
+        author: author,
+        image: image,
+        description: desc,
+        createdAt: new Date().getTime(),
+        likes: 0
+      }
+      this.posts.push(post)
+    }
+  }
+})
