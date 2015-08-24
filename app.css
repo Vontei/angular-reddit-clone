@@ -3,7 +3,7 @@
   margin-right: 10em;
   height: 250px;
   padding-bottom: 50px;
-  
+
 }
 
 form{
@@ -11,6 +11,10 @@ form{
   margin-right: 10em;
 }
 
+.author{
+  float: right;
+  margin-right: 20px;
+}
 
 .pull-right{
   width: 80%;
@@ -22,4 +26,13 @@ form{
 
 .navbar{
   background-color: rgba(6, 6, 6, 0.13);
+}
+
+.panel-body{
+  margin-top: 20px;
+}
+
+.timestamp{
+  position: relative;
+  bottom: 0;
 }
