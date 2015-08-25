@@ -31,6 +31,24 @@ app.factory('postService', function(){
               comment: 'Dude im totally a skiier bro.'
             }
           ]
+        },
+        {
+          title:"Scarps Ridge",
+          author:'Jahny French',
+          image: "http://cdn1.absolutetravel.com/content/uploads/2013/10/scarp-ridge-lodge_ski_slide.jpg",
+          description: 'The south facing side has a weak facet layer two feet down. Best options are early morning descents with a thorough pit analysis and slab stomp.',
+          createdAt: new Date().getTime(),
+          likes: 0,
+          comments: [
+            {
+              author: 'Jah ja',
+              comment: 'Great turns up there'
+            },
+            {
+              author: 'John Doe',
+              comment: 'The cat ride was as good as the skiing'
+            }
+          ]
         }
     ],
     addPost: function (title,author,image,desc) {

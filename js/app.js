@@ -18,12 +18,15 @@ app.controller('panelController',[
     postService.query = $scope.query
 
     $scope.addReview  = function(){
+      console.log(this)
       var review = {
         author: this.reviewAuthor,
         comment: this.reviewComment
       };
       console.log(this.post)
       this.post.comments.push(review);
+      this.reviewAuthor = ''
+      this.reviewComment = ''
     }
   }
 ])
@@ -37,7 +40,7 @@ app.controller('navController', [
     $scope.showForm = function(){
       postService.showForm()
     }
-
+    postService.query = $scope.query
 
 
   }

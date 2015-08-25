@@ -1,9 +1,31 @@
 .well{
-  margin-left: 10em;
-  margin-right: 10em;
-  height: 250px;
+  background-color: rgb(252, 250, 10);
+  margin-left:15em;
+  margin-right: 15em;
+  height: 290px;
   padding-bottom: 50px;
+  color: black;
+  overflow: scroll;
+}
 
+
+#find{
+  color: black;
+}
+
+h4{
+  font-style: italic;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+body{
+  background-color: rgb(70, 70, 70);
+  color: white;
+}
+
+.timestamp{
+  font-size: 18px;
 }
 
 .red{
@@ -23,8 +45,14 @@
 }
 
 form{
-  margin-left: 10em;
-  margin-right: 10em;
+  margin-left: 15em;
+  margin-right: 15em;
+}
+
+.sorter{
+  margin-left: 15em;
+  width: 200px;
+  margin-bottom: 20px;
 }
 
 .author{
@@ -33,7 +61,7 @@ form{
 }
 
 .pull-right{
-  width: 80%;
+  width: 70%;
 }
 
 .panel-body{
@@ -41,7 +69,8 @@ form{
 }
 
 .navbar{
-  background-color: rgba(6, 6, 6, 0.13);
+  background-color: rgb(252, 250, 10);
+
 }
 
 .panel-body{
