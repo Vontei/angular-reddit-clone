@@ -11,7 +11,8 @@ app.factory('postService', function(){
           image: "http://images.summitpost.org/original/110894.jpg",
           description: 'The northwest cornice slid saturday morning. It was triggered by a skiier dropping in around 845am. Skies were clear and wind was low. The slab was 2.5 ft thick and 200ft wide.',
           createdAt: new Date().getTime(),
-          likes: 0
+          likes: 0,
+          comments: []
         },
         {
           title:"Red Lady",

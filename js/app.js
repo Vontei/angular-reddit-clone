@@ -15,12 +15,16 @@ app.controller('panelController',[
       $scope.imageEntry = '';
       $scope.descriptionEntry = '';
     }
-
-
-
-
     postService.query = $scope.query
 
+    $scope.addReview  = function(){
+      var review = {
+        author: this.reviewAuthor,
+        comment: this.reviewComment
+      };
+      console.log(this.post)
+      this.post.comments.push(review);
+    }
   }
 ])
 
@@ -33,19 +37,8 @@ app.controller('navController', [
     $scope.showForm = function(){
       postService.showForm()
     }
-    postService.query = $scope.query
 
 
 
   }
 ])
-
-
-
-app.controller("ReviewController", function(){
-  this.review = {};
-  this.addReview = function(){
-    product.reviews.push(this.review);
-    this.review = {}
-  }
-})

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html ng-app='redditClone'>
   <head>
-    <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel='stylesheet' href='app.css'>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js'></script>
@@ -22,7 +22,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav">
-            <li ng-click='{}'><a href="#"><span class="glyphicon glyphicon-plus"></span> Submit Post</a></li>
+            <li ><a href="#"><span class="glyphicon glyphicon-plus"></span> Submit Post</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Sort By Votes <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -42,7 +42,7 @@
       </div>
     </nav>
 </div>
-    <div  ng-controller='panelController'>
+    <div ng-controller='panelController'>
       <form>
         <div class="form-group">
           <label for="title">Title</label>
@@ -89,16 +89,15 @@
 
             <div ng-repeat='comment in post.comments' ng-show='thisComment'>
                 <p>{{comment.author}}:  {{comment.comment}}</p>
-
             </div>
 
-            <div ng-controller='ReviewController' ng-show='comm'>
-              <p ng-model='review' >{{author}}:  {{comment}}</p>
+            <div ng-show='comm'>
+              <p>{{author}}:  {{comment}}</p>
               <label>Author</label>
-              <input ng-model='author' type='text'>
+              <input ng-model='reviewAuthor' type='text'>
               <label>Comment</label>
-              <input ng-model='comment' type='text'>
-              <button ng-click='addReview(review)'
+              <input ng-model='reviewComment' type='text'>
+              <button ng-click='addReview()'>Submit</button>
             </div>
 
           </div>
@@ -106,6 +105,5 @@
       </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </body>
 </html>
