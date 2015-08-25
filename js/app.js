@@ -16,6 +16,7 @@ app.controller('panelController',[
       $scope.descriptionEntry = '';
     }
 
+
   }
 
 ])
@@ -27,12 +28,7 @@ app.controller('navController', [
   function($scope, postService){
 
     $scope.showForm = function(){
-      if($scope.show === true){
-        $scope.show = false
-      }
-      if($scope.show === false){
-        $scope.show = true
-      }
+      postService.showForm()
     }
 
 

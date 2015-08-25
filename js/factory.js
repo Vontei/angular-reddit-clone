@@ -17,7 +17,17 @@ app.factory('postService', function(){
           image: "https://cbshotoftheday.files.wordpress.com/2014/03/14-03-24_emmonsski.jpg?w=1000",
           description: 'The south facing side has a weak facet layer two feet down. Best options are early morning descents with a thorough pit analysis and slab stomp.',
           createdAt: new Date().getTime(),
-          likes: 0
+          likes: 0,
+          comments: [
+            {
+              author: 'Nick',
+              comment: 'Epic dude thanks for the heads up'
+            },
+            {
+              author: 'John Doe',
+              comment: 'Dude im totally a skiier bro.'
+            }
+          ]
         }
     ],
     addPost: function (title,author,image,desc) {
@@ -27,9 +37,16 @@ app.factory('postService', function(){
         image: image,
         description: desc,
         createdAt: new Date().getTime(),
-        likes: 0
+        likes: 0,
+        comments: []
+
       }
       this.posts.push(post)
-    }
+    },
+
+
+
+
+
   }
 })

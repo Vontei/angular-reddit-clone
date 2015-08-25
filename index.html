@@ -2,10 +2,10 @@
 <html ng-app='redditClone'>
   <head>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel='stylesheet' href='app.css'>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src='./js/app.js'></script>
     <script src='./js/factory.js'></script>
     <title>Reddit Clone</title>
@@ -42,48 +42,54 @@
       </div>
     </nav>
 </div>
-    <div ng-controller='panelController'>
-      <form>
+    <div  ng-controller='panelController'>
+      <form ng-show='show == true'>
         <div class="form-group">
           <label for="title">Title</label>
-          <input ng-class='{invalid: titleEntry.length < 4, valid: titleEntry.length>3}' $invalid ng-model='titleEntry' type="text" class="form-control" id="title">
+          <input required ng-class='{invalid: titleEntry.length < 4, valid: titleEntry.length>3}' $invalid ng-model='titleEntry' type="text" class="form-control" id="title">
         </div>
         <div class="form-group">
           <label for="author">Author</label>
-          <input   ng-class='{invalid: authorEntry.length < 4, valid: authorEntry.length>3}' ng-model='authorEntry' type="text" class="form-control" id="author" >
+          <input  required  ng-class='{invalid: authorEntry.length < 4, valid: authorEntry.length>3}' ng-model='authorEntry' type="text" class="form-control" id="author" >
         </div>
         <div class="form-group">
           <label for="image">Image</label>
-          <input  ng-class='{invalid: imageEntry.length < 4, valid: imageEntry.length >3}' ng-model='imageEntry'  type="text" class="form-control" id="image" >
+          <input  required ng-class='{invalid: imageEntry.length < 4, valid: imageEntry.length >3}' ng-model='imageEntry'  type="text" class="form-control" id="image" >
         </div>
         <div class="form-group">
           <label for="author">Description</label>
-          <textarea ng-model='descriptionEntry' type="Description" class="form-control" id="description"></textarea>
+          <textarea  required ng-model='descriptionEntry' type="Description" class="form-control" id="description"></textarea>
         </div>
         <div class='form-group'>
           <input type='submit' class="btn btn-default" value='Submit' ng-click='addPost()'>
         </div>
       </form>
 
-      <div ng-repeat='post in posts | filter: query'>
+      <select ng-model='sort'>
+          <option value='createdAt'>Date</option>
+          <option selected value='-likes'>Likes</option>
+      </select>
+
+      <div ng-repeat='post in posts | filter: query | orderBy: sort'>
         <div class="well well-lg">
           <div class="pull-left">
             <img ng-src={{post.image}} height='200' width='200'>
           </div>
           <div class="pull-right">
             <div class="row">
-              <h4 class="panel-heading">{{post.title}} | <span ng-click='post.likes = post.likes + 1' class="glyphicon glyphicon-arrow-up"></span>  <span ng-click='post.likes = post.likes -1' class=" glyphicon glyphicon-arrow-down"></span> {{post.likes}}</h4>
+              <h4 class="panel-heading">{{post.title}} | <span ng-click='post.likes = post.likes + 1' class="glyphicon glyphicon-arrow-up"></span>
+                <span ng-click='post.likes = post.likes -1' class=" glyphicon glyphicon-arrow-down"></span><span ng-class='{green: post.likes>0, red: post.likes<0}'>  {{post.likes}}</span>
+              </h4>
               <p class="author">Posted by: {{post.author}}</p>
               <div class="panel-body">
                 <p>{{post.description}}</p>
-                <p class="timestamp"><span class="glyphicon glyphicon-calendar"></span> @{{post.createdAt | date}} | <span class="glyphicon glyphicon-comment"></span> Comments |  <span class="glyphicon glyphicon-pencil"></span> Add Comment</p>
+                <p class="timestamp"><span class="glyphicon glyphicon-calendar"></span> @{{post.createdAt | date}} | <span class="glyphicon glyphicon-comment"></span> Comments {{post.comments.length}} |  <span class="glyphicon glyphicon-pencil"></span> Add Comment</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-  </div>
-
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </body>
