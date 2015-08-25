@@ -6,7 +6,7 @@
   padding-bottom: 50px;
   color: black;
   overflow: scroll;
-  ng-in: .4s flipInY;
+  border-left: 10px solid black;
 }
 
 

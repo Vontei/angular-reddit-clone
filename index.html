@@ -24,7 +24,7 @@
           </div>
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
-              <li ><a href="#"><span class="glyphicon glyphicon-plus"></span> Submit Post</a></li>
+              <li ><a  ng-click='formShow = !formShow' href="#"><span class="glyphicon glyphicon-plus"></span> Submit Post</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By Votes <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -44,7 +44,7 @@
       </nav>
     </div>
     <div ng-controller='panelController'>
-      <form>
+      <form ng-show='formShow'>
         <div class="form-group">
           <label for="title">Title</label>
           <input required ng-class='{invalid: titleEntry.length < 4, valid: titleEntry.length>3}' $invalid ng-model='titleEntry' type="text" class="form-control" id="title">
@@ -73,7 +73,7 @@
       </select>
 
       <div ng-repeat="post in posts | orderBy: sort| filter:query">
-        <div class="animated well well-lg flipInY">
+        <div class="animated well well-lg zoomInDown">
           <div class="pull-left">
             <img ng-src={{post.image}} height='200' width='200'>
           </div>
@@ -82,7 +82,7 @@
               <h4 class="panel-heading">{{post.title}} | <span ng-click='post.likes = post.likes + 1' class="glyphicon glyphicon-arrow-up"></span>
                 <span ng-click='post.likes = post.likes -1' class=" glyphicon glyphicon-arrow-down"></span><span ng-class='{green: post.likes>0, red: post.likes<0}'>  {{post.likes}}</span>
               </h4>
-              <p class="author">Posted by: {{post.author}}</p>
+              <p class="author"><em>Posted by: {{post.author}}</em></p>
               <div class="panel-body">
                 <p>{{post.description}}</p>
                 <p class="timestamp"><span class="glyphicon glyphicon-calendar"></span> @{{post.createdAt | date}} | <span class="glyphicon glyphicon-comment"></span><span ng-click='thisComment = !thisComment'> Comments {{post.comments.length}} | </span> <span ng-click='comm = !comm'  class="glyphicon glyphicon-pencil">Add Comment</span> </p>
@@ -90,11 +90,11 @@
             </div>
 
             <div class='commentBlock' ng-repeat='comment in post.comments' ng-show='thisComment'>
-                <p>{{comment.author}}:  {{comment.comment}}</p>
+                <p><em>@{{comment.author}} : </em> {{comment.comment}}</p>
             </div>
 
             <div ng-show='comm'>
-              <p>{{reviewAuthor}}:  {{reviewComment}}</p>
+              <p><em>{{reviewAuthor}}:</em>  {{reviewComment}}</p>
               <label>Author</label>
               <input ng-model='reviewAuthor' type='text'>
               <label>Comment</label>
