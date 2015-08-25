@@ -1,4 +1,6 @@
 var app = angular.module("redditClone");
+
+
 app.factory('postService', function(){
 
   return {

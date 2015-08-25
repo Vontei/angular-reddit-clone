@@ -83,9 +83,24 @@
               <p class="author">Posted by: {{post.author}}</p>
               <div class="panel-body">
                 <p>{{post.description}}</p>
-                <p class="timestamp"><span class="glyphicon glyphicon-calendar"></span> @{{post.createdAt | date}} | <span class="glyphicon glyphicon-comment"></span> Comments {{post.comments.length}} |  <span class="glyphicon glyphicon-pencil"></span> Add Comment</p>
+                <p class="timestamp"><span class="glyphicon glyphicon-calendar"></span> @{{post.createdAt | date}} | <span class="glyphicon glyphicon-comment"></span><span ng-click='thisComment = !thisComment'>Comments {{post.comments.length}} | </span> <span ng-click='comm = !comm'  class="glyphicon glyphicon-pencil"> Add Comment</span> </p>
               </div>
             </div>
+
+            <div ng-repeat='comment in post.comments' ng-show='thisComment'>
+                <p>{{comment.author}}:  {{comment.comment}}</p>
+
+            </div>
+
+            <div ng-controller='ReviewController' ng-show='comm'>
+              <p ng-model='review' >{{author}}:  {{comment}}</p>
+              <label>Author</label>
+              <input ng-model='author' type='text'>
+              <label>Comment</label>
+              <input ng-model='comment' type='text'>
+              <button ng-click='addReview(review)'
+            </div>
+
           </div>
         </div>
       </div>

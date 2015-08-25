@@ -16,10 +16,12 @@ app.controller('panelController',[
       $scope.descriptionEntry = '';
     }
 
+
+
+
     postService.query = $scope.query
 
   }
-
 ])
 
 
@@ -31,10 +33,19 @@ app.controller('navController', [
     $scope.showForm = function(){
       postService.showForm()
     }
-
     postService.query = $scope.query
 
 
 
   }
 ])
+
+
+
+app.controller("ReviewController", function(){
+  this.review = {};
+  this.addReview = function(){
+    product.reviews.push(this.review);
+    this.review = {}
+  }
+})
