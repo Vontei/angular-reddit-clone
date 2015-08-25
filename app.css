@@ -2,10 +2,11 @@
   background-color: rgb(252, 250, 10);
   margin-left:15em;
   margin-right: 15em;
-  height: 290px;
+  height: 250px;
   padding-bottom: 50px;
   color: black;
   overflow: scroll;
+  ng-in: .4s flipInY;
 }
 
 
