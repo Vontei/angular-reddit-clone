@@ -16,6 +16,7 @@ app.controller('panelController',[
       $scope.descriptionEntry = '';
     }
 
+    postService.query = $scope.query
 
   }
 
@@ -31,6 +32,7 @@ app.controller('navController', [
       postService.showForm()
     }
 
+    postService.query = $scope.query
 
 
 

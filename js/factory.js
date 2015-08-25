@@ -44,7 +44,7 @@ app.factory('postService', function(){
       this.posts.push(post)
     },
 
-
+    query: ''
 
 
 
