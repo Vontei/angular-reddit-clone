@@ -42,7 +42,7 @@
           </div>
         </div>
       </nav>
-    </div>
+    <!-- </div> -->
     <div ng-controller='panelController'>
       <form ng-show='formShow'>
         <div class="form-group">
@@ -72,7 +72,10 @@
           <option selected value='-likes'>Likes</option>
       </select>
 
-      <div ng-repeat="post in posts | orderBy: sort| filter:query">
+      <!-- <input id='searchBar' class='form-control' ng-model="query">
+      <br> -->
+
+      <div ng-repeat="post in posts | orderBy: sort| filter: query">
         <div class="animated well well-lg zoomInDown">
           <div class="pull-left">
             <img ng-src={{post.image}} height='200' width='200'>
@@ -90,7 +93,7 @@
             </div>
 
             <div class='commentBlock' ng-repeat='comment in post.comments' ng-show='thisComment'>
-                <p><em>@{{comment.author}} : </em> {{comment.comment}}</p>
+                <p id='blue'><em id='commentAuthor'>@{{comment.author}} : </em> {{comment.comment}}</p>
             </div>
 
             <div ng-show='comm'>
@@ -106,6 +109,6 @@
         </div>
       </div>
     </div>
-
+</div>
   </body>
 </html>
