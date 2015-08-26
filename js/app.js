@@ -2,6 +2,9 @@
 var app = angular.module("redditClone", []);
 
 
+
+
+
 app.controller('panelController',[
   '$scope',
   'postService',
@@ -14,6 +17,7 @@ app.controller('panelController',[
       $scope.authorEntry = '';
       $scope.imageEntry = '';
       $scope.descriptionEntry = '';
+      // postService.showForm()
     }
     postService.query = $scope.query
 
@@ -37,9 +41,9 @@ app.controller('navController', [
   'postService',
   function($scope, postService){
 
-    $scope.showForm = function(){
-      postService.showForm()
-    }
+    // $scope.showForm = function(){
+    //   // postService.showForm()
+    // }
     postService.query = $scope.query
 
 

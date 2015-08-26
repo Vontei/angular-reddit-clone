@@ -27,9 +27,9 @@
               <li ><a  ng-click='formShow = !formShow' href="#"><span class="glyphicon glyphicon-plus"></span> Submit Post</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By Votes <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Highest Rated</a></li>
-                  <li><a href="#">Most Viewed</a></li>
+                <ul  class="dropdown-menu">
+                  <li ng-click="sort = createdAt"><a href="#">Date</a></li>
+                  <li ng-click="sort = '-likes'"><a href="#">Likes</a></li>
                 </ul>
               </li>
             </ul>
@@ -62,15 +62,15 @@
           <textarea  required ng-model='descriptionEntry' type="Description" class="form-control" id="description"></textarea>
         </div>
         <div class='form-group'>
-          <input type='submit' class="btn btn-default" value='Submit' ng-click='addPost()'>
+          <input type='submit' class="btn btn-default" value='Submit' ng-click='addPost(); formShow = !formShow'>
         </div>
       </form>
 
-      <label class='sorter'>Sort By: </label>
+      <!-- <label class='sorter'>Sort By: </label>
       <select class='sorter' ng-model='sort'>
           <option value='createdAt'>Date</option>
           <option selected value='-likes'>Likes</option>
-      </select>
+      </select> -->
 
       <!-- <input id='searchBar' class='form-control' ng-model="query">
       <br> -->
