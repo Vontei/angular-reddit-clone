@@ -52,6 +52,7 @@ app.factory('postService', function(){
         }
     ],
     addPost: function (title,author,image,desc) {
+
       var post = {
         title: title,
         author: author,

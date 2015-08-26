@@ -12,8 +12,8 @@
     <script src='./js/factory.js'></script>
     <title>Reddit Clone</title>
   </head>
-  <body>
-    <div ng-controller='navController'>
+  <body ng-controller='panelController'>
+    <div>
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -24,12 +24,12 @@
           </div>
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
-              <li ><a  ng-click='formShow = !formShow' href="#"><span class="glyphicon glyphicon-plus"></span> Submit Post</a></li>
+              <li ><a  ng-click='toggleForm()' href="#"><span class="glyphicon glyphicon-plus"></span> Submit Post</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By Votes <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By <span class="caret"></span></a>
                 <ul  class="dropdown-menu">
                   <li ng-click="sort = createdAt"><a href="#">Date</a></li>
-                  <li ng-click="sort = '-likes'"><a href="#">Likes</a></li>
+                  <li ng-click="sort = '-likes'"><a href="#">Like</a></li>
                 </ul>
               </li>
             </ul>
@@ -43,8 +43,8 @@
         </div>
       </nav>
     <!-- </div> -->
-    <div ng-controller='panelController'>
-      <form ng-show='formShow'>
+    <div>
+      <form ng-show='showingForm'>
         <div class="form-group">
           <label for="title">Title</label>
           <input required ng-class='{invalid: titleEntry.length < 4, valid: titleEntry.length>3}' $invalid ng-model='titleEntry' type="text" class="form-control" id="title">
@@ -62,7 +62,7 @@
           <textarea  required ng-model='descriptionEntry' type="Description" class="form-control" id="description"></textarea>
         </div>
         <div class='form-group'>
-          <input type='submit' class="btn btn-default" value='Submit' ng-click='addPost(); formShow = !formShow'>
+          <input type='submit' class="btn btn-default" value='Submit' ng-click='addPost()'>
         </div>
       </form>
 

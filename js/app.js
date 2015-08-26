@@ -2,13 +2,7 @@
 var app = angular.module("redditClone", []);
 
 
-
-
-
-app.controller('panelController',[
-  '$scope',
-  'postService',
-  function($scope, postService){
+app.controller('panelController', function($scope, postService){
     $scope.posts = postService.posts;
     $scope.addPost = function(){
       postService.addPost($scope.titleEntry,$scope.authorEntry,$scope.imageEntry,$scope.descriptionEntry)
@@ -17,7 +11,11 @@ app.controller('panelController',[
       $scope.authorEntry = '';
       $scope.imageEntry = '';
       $scope.descriptionEntry = '';
-      // postService.showForm()
+      $scope.toggleForm();
+    }
+    $scope.showingForm = false;
+    $scope.toggleForm = function () {
+      $scope.showingForm = !$scope.showingForm;
     }
     postService.query = $scope.query
 
@@ -32,20 +30,4 @@ app.controller('panelController',[
       this.reviewAuthor = ''
       this.reviewComment = ''
     }
-  }
-])
-
-
-app.controller('navController', [
-  '$scope',
-  'postService',
-  function($scope, postService){
-
-    // $scope.showForm = function(){
-    //   // postService.showForm()
-    // }
-    postService.query = $scope.query
-
-
-  }
-])
+  })
