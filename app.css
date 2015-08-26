@@ -38,6 +38,9 @@ h4{
 body{
   background-color: rgb(70, 70, 70);
   color: white;
+  background-image: url(http://www.downloadclipart.net/large/10863-black-and-white-mountain-design.png);
+  background-size:auto;
+  background-repeat: no-repeat;
 }
 
 .timestamp{
