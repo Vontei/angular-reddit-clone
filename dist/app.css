@@ -1,0 +1,102 @@
+.well{
+  margin-top: 4em;
+  background-color: rgb(252, 250, 10);
+  margin-left:15em;
+  margin-right: 15em;
+  height: 250px;
+  padding-bottom: 50px;
+  color: black;
+  overflow: scroll;
+  border-left: 10px solid black;
+-webkit-box-shadow: 2px 2px 37px 4px rgba(251, 255, 55, 1);}
+
+#blue{
+  color: rgb(44, 71, 251);
+}
+
+
+#commentAuthor{
+  color: black;
+  font-weight: bold;
+}
+
+#searchBar {
+  margin: 0 auto;
+  width: 20%;
+}
+
+#find {
+  color: black;
+}
+
+h4{
+  font-style: italic;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+body{
+  background-color: rgb(70, 70, 70);
+  color: white;
+  background-image: url(http://www.downloadclipart.net/large/10863-black-and-white-mountain-design.png);
+  background-size:auto;
+  background-repeat: no-repeat;
+}
+
+.timestamp{
+  font-size: 18px;
+}
+
+.red{
+  color:rgb(238, 40, 13);
+}
+
+.green{
+  color:rgb(20, 235, 29);
+}
+
+.valid{
+  border-color: rgb(106, 251, 63);
+}
+
+.invalid{
+  border-color: rgb(242, 72, 10);
+}
+
+form{
+  margin-left: 15em;
+  margin-right: 15em;
+}
+
+.sorter{
+  margin-left: 15em;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.author{
+  float: right;
+  margin-right: 20px;
+}
+
+.pull-right{
+  width: 70%;
+}
+
+.panel-body{
+  height: 15%;
+}
+
+.navbar{
+  background-color: rgb(252, 250, 10);
+
+}
+
+.panel-body{
+  margin-top: 20px;
+}
+
+.timestamp{
+  position: relative;
+  bottom: 0;
+}

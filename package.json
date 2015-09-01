@@ -1,0 +1,23 @@
+{
+  "name": "reddit-clone",
+  "version": "1.0.0",
+  "description": "This is a front-end AngularJS app. It incorporates Bootstrap and Jquery.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vontei/angular-reddit-clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vontei/angular-reddit-clone/issues"
+  },
+  "homepage": "https://github.com/Vontei/angular-reddit-clone#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0"
+  }
+}
