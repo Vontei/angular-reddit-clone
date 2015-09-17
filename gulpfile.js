@@ -21,6 +21,9 @@ gulp.task('styles', function () {
 })
 
 
+gulp.task('ci', ['default']);
+
+
 gulp.task('watchout', function () {
   gulp.watch('js/*js', ['scripts'])
   gulp.watch('app.css', ['styles'])
