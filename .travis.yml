@@ -12,7 +12,7 @@ before_install:
   - bower install
   - bower install --save gulp
   - npm install
-  # - npm install -g gulp
+  - npm install gulp --save
 # before_script:
 #   - npm install -g gulp
 script:
